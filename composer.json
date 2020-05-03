@@ -10,8 +10,8 @@
     "require": {
         "php": "^7.2",
         "sentry/sentry-laravel": "^1.7",
-        "illuminate/support": "^7.9",
-        "illuminate/container": "^7.9"
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "illuminate/container": "^6.0|^7.0|^8.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
