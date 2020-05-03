@@ -8,6 +8,23 @@
         }
     ],
     "require": {
-        "sentry/sentry-laravel": "^1.7"
+        "php": "^7.2",
+        "sentry/sentry-laravel": "^1.7",
+        "illuminate/support": "^7.9",
+        "illuminate/container": "^7.9"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "zing/coding-standard": "^0.0.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zing\\LaravelSentry\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zing\\LaravelSentry\\Tests\\": "tests"
+        }
     }
 }
