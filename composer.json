@@ -1,0 +1,13 @@
+{
+    "name": "zing/laravel-sentry",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zingimmick",
+            "email": "zingimmick@outlook.com"
+        }
+    ],
+    "require": {
+        "sentry/sentry-laravel": "^1.7"
+    }
+}
