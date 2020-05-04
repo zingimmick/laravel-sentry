@@ -9,16 +9,18 @@
     ],
     "require": {
         "php": "^7.2",
-        "sentry/sentry-laravel": "^1.7",
+        "illuminate/container": "^6.0|^7.0|^8.0",
         "illuminate/support": "^6.0|^7.0|^8.0",
-        "illuminate/container": "^6.0|^7.0|^8.0"
+        "sentry/sentry-laravel": "^1.7"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master",
-        "zing/coding-standard": "^0.0.4",
+        "mockery/mockery": "^1.2.3",
         "orchestra/testbench": "^4.0|^5.0",
-        "phpunit/phpunit": "^7.0|^8.0|^9.0"
-    },"minimum-stability": "dev",
+        "phpunit/phpunit": "^7.0|^8.0|^9.0",
+        "roave/security-advisories": "dev-master",
+        "zing/coding-standard": "^0.0.4"
+    },
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
