@@ -1,5 +1,6 @@
 {
     "name": "zing/laravel-sentry",
+    "description": "Provides sentry context middleware.",
     "license": "MIT",
     "authors": [
         {
