@@ -7,6 +7,7 @@ namespace Zing\LaravelSentry\Tests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Sentry\Event;
+use Sentry\Laravel\Facade;
 use Sentry\SentrySdk;
 use Zing\LaravelSentry\Middleware\SentryContext;
 
@@ -29,7 +30,7 @@ class SentryContextTest extends TestCase
             $nextParam = $param;
         };
         (new SentryContext())->handle($request, $next);
-        $userContext = SentrySdk::getCurrentHub()->pushScope()->applyToEvent(new Event(), [])->getUserContext();
+        $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->email, $userContext->getEmail());
     }
@@ -52,7 +53,7 @@ class SentryContextTest extends TestCase
             $nextParam = $param;
         };
         (new CustomSentryContext())->handle($request, $next);
-        $userContext = SentrySdk::getCurrentHub()->pushScope()->applyToEvent(new Event(), [])->getUserContext();
+        $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->username, $userContext->getUsername());
     }
