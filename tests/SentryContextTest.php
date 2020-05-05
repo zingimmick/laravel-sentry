@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Sentry\Event;
 use Sentry\Laravel\Facade;
-use Sentry\SentrySdk;
 use Zing\LaravelSentry\Middleware\SentryContext;
 
 class SentryContextTest extends TestCase
