@@ -28,7 +28,7 @@ class SentryContextTest extends TestCase
         $next = function ($param) use (&$nextParam): void {
             $nextParam = $param;
         };
-        (new SentryContext())->handle($request, $next);
+        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $next);
         $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->email, $userContext->getEmail());
@@ -51,7 +51,7 @@ class SentryContextTest extends TestCase
         $next = function ($param) use (&$nextParam): void {
             $nextParam = $param;
         };
-        (new CustomSentryContext())->handle($request, $next);
+        (new CustomSentryContext(Auth::getFacadeRoot()))->handle($request, $next);
         $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->username, $userContext->getUsername());

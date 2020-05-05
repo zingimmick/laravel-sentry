@@ -6,12 +6,32 @@ namespace Zing\LaravelSentry\Middleware;
 
 use Closure;
 use Illuminate\Container\Container;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Factory;
 use function Sentry\configureScope;
 use Sentry\State\Scope;
 
 class SentryContext
 {
+    /**
+     * The authentication factory instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Factory
+     */
+    protected $auth;
+
+    /**
+     * Create a new middleware instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Factory $auth
+     *
+     * @return void
+     */
+    public function __construct(Factory $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle an incoming request.
      *
@@ -22,10 +42,10 @@ class SentryContext
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Container::getInstance()->bound('sentry')) {
+        if ($this->auth->guard()->check() && Container::getInstance()->bound('sentry')) {
             configureScope(
                 function (Scope $scope): void {
-                    $scope->setUser($this->resolveUser(Auth::getDefaultDriver()));
+                    $scope->setUser($this->resolveUserContext($this->auth->getDefaultDriver(), $this->auth->guard()->user()));
                 }
             );
         }
@@ -33,11 +53,11 @@ class SentryContext
         return $next($request);
     }
 
-    protected function resolveUser($guard): array
+    protected function resolveUserContext($guard, Authenticatable $user): array
     {
         return [
-            'id' => Auth::user()->getAuthIdentifier(),
-            'email' => Auth::user()->email,
+            'id' => $user->getAuthIdentifier(),
+            'email' => $user->email,
         ];
     }
 }
