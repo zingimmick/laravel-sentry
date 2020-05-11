@@ -42,17 +42,29 @@ class SentryContext
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->guard()->check() && Container::getInstance()->bound('sentry')) {
-            configureScope(
-                function (Scope $scope): void {
-                    $scope->setUser($this->resolveUserContext($this->auth->getDefaultDriver(), $this->auth->guard()->user()));
-                }
-            );
+        if ($this->auth->guard()->guest()) {
+            return $next($request);
         }
+
+        if (! Container::getInstance()->bound('sentry')) {
+            return $next($request);
+        }
+
+        configureScope(
+            function (Scope $scope): void {
+                $scope->setUser($this->resolveUserContext($this->auth->getDefaultDriver(), $this->auth->guard()->user()));
+            }
+        );
 
         return $next($request);
     }
 
+    /**
+     * @param string $guard
+     * @param \Illuminate\Contracts\Auth\Authenticatable $user
+     *
+     * @return array
+     */
     protected function resolveUserContext($guard, Authenticatable $user): array
     {
         return [

@@ -6,6 +6,7 @@ namespace Zing\LaravelSentry\Tests;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mockery;
 use Sentry\Event;
 use Sentry\Laravel\Facade;
 use Zing\LaravelSentry\Middleware\SentryContext;
@@ -21,14 +22,9 @@ class SentryContextTest extends TestCase
             ]
         );
         Auth::setUser($user);
-        $request = \Mockery::mock(Request::class);
+        $request = Mockery::mock(Request::class);
 
-        $nextParam = null;
-
-        $next = function ($param) use (&$nextParam): void {
-            $nextParam = $param;
-        };
-        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $next);
+        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext());
         $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->email, $userContext->getEmail());
@@ -44,16 +40,21 @@ class SentryContextTest extends TestCase
         );
         Auth::shouldUse('api');
         Auth::setUser($user);
-        $request = \Mockery::mock(Request::class);
+        $request = Mockery::mock(Request::class);
 
-        $nextParam = null;
-
-        $next = function ($param) use (&$nextParam): void {
-            $nextParam = $param;
-        };
-        (new CustomSentryContext(Auth::getFacadeRoot()))->handle($request, $next);
+        (new CustomSentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext());
         $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->username, $userContext->getUsername());
+    }
+
+    public function testGuest(): void
+    {
+        $request = Mockery::mock(Request::class);
+
+        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext());
+        $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
+        $this->assertNull($userContext->getId());
+        self::assertNull($userContext->getEmail());
     }
 }
