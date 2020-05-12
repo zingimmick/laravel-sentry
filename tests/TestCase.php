@@ -18,10 +18,8 @@ class TestCase extends BaseTestCase
         ];
     }
 
-    protected function createNext(): callable
+    protected function createNext(&$nextParam): callable
     {
-        $nextParam = null;
-
         return static function ($param) use (&$nextParam): void {
             $nextParam = $param;
         };

@@ -23,11 +23,12 @@ class SentryContextTest extends TestCase
         );
         Auth::setUser($user);
         $request = Mockery::mock(Request::class);
-
-        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext());
+        $nextParam = null;
+        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext($nextParam));
         $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->email, $userContext->getEmail());
+        $this->assertSame($request, $nextParam);
     }
 
     public function testCustom(): void
@@ -42,19 +43,21 @@ class SentryContextTest extends TestCase
         Auth::setUser($user);
         $request = Mockery::mock(Request::class);
 
-        (new CustomSentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext());
+        (new CustomSentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext($nextParam));
         $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->username, $userContext->getUsername());
+        $this->assertSame($request, $nextParam);
     }
 
     public function testGuest(): void
     {
         $request = Mockery::mock(Request::class);
 
-        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext());
+        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext($nextParam));
         $userContext = Facade::pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertNull($userContext->getId());
         self::assertNull($userContext->getEmail());
+        $this->assertSame($request, $nextParam);
     }
 }

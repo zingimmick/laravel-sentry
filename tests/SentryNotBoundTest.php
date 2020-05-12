@@ -32,9 +32,10 @@ class SentryNotBoundTest extends TestCase
         Auth::setUser($user);
         $request = Mockery::mock(Request::class);
 
-        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext());
+        (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext($nextParam));
         $userContext = Hub::getCurrent()->pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertNull($userContext->getId());
         self::assertNull($userContext->getEmail());
+        $this->assertSame($request, $nextParam);
     }
 }
