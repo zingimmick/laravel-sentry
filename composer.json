@@ -20,7 +20,6 @@
         "roave/security-advisories": "dev-master",
         "zing/coding-standard": "^1.0"
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
