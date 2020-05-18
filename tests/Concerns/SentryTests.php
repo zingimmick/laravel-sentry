@@ -66,7 +66,7 @@ trait SentryTests
 
     public function testCaptureException(): void
     {
-        $this->getHubFromContainer()->captureException(new \Exception());
+        $this->resolveSentryIntegration()::captureException(new \Exception());
         self::assertNotNull($this->getHubFromContainer()->getLastEventId());
     }
 }

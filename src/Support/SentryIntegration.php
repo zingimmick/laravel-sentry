@@ -12,11 +12,7 @@ class SentryIntegration
 {
     public static function getAbstract(): string
     {
-        if (class_exists(ServiceProvider::class)) {
-            return ServiceProvider::$abstract;
-        }
-
-        return 'sentry';
+        return class_exists(ServiceProvider::class) ? ServiceProvider::$abstract : 'sentry';
     }
 
     public static function bound(): bool
