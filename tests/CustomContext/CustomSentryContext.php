@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Zing\LaravelSentry\Tests;
+namespace Zing\LaravelSentry\Tests\CustomContext;
 
 use Zing\LaravelSentry\Middleware\SentryContext;
 

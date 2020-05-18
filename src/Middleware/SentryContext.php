@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Zing\LaravelSentry\Middleware;
 
 use Closure;
-use Illuminate\Container\Container;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Factory;
 use function Sentry\configureScope;
 use Sentry\State\Scope;
+use Zing\LaravelSentry\Support\SentryIntegration;
 
 class SentryContext
 {
@@ -46,7 +46,7 @@ class SentryContext
             return $next($request);
         }
 
-        if (! Container::getInstance()->bound('sentry')) {
+        if (! $this->sentryIsBound()) {
             return $next($request);
         }
 
@@ -57,6 +57,11 @@ class SentryContext
         );
 
         return $next($request);
+    }
+
+    protected function sentryIsBound(): bool
+    {
+        return SentryIntegration::bound();
     }
 
     /**
