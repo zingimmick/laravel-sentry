@@ -9,4 +9,5 @@
 <a href="https://packagist.org/packages/zing/laravel-sentry"><img src="https://poser.pugx.org/zing/laravel-sentry/license" alt="License"></a>
 <a href="https://scrutinizer-ci.com/g/zingimmick/laravel-sentry"><img src="https://scrutinizer-ci.com/g/zingimmick/laravel-sentry/badges/quality-score.png" alt="Scrutinizer Code Quality"></a>
 <a href="https://github.styleci.io/repos/260966413"><img src="https://github.styleci.io/repos/260966413/shield?branch=master" alt="StyleCI Shield"></a>
+<a href="https://codeclimate.com/github/zingimmick/laravel-sentry/maintainability"><img src="https://api.codeclimate.com/v1/badges/5a95a074bcd38fd38da0/maintainability" /></a>
 </p>
