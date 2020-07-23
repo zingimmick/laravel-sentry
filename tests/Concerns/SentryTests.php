@@ -17,7 +17,7 @@ trait SentryTests
 {
     public function testBound(): void
     {
-        self::assertTrue($this->resolveSentryIntegration()::bound());
+        self::assertTrue(forward_static_call([$this->resolveSentryIntegration(), 'bound']));
     }
 
     public function testHandle(): void
@@ -61,12 +61,12 @@ trait SentryTests
 
     protected function getHubFromContainer(): HubInterface
     {
-        return $this->resolveSentryIntegration()::getInstance();
+        return forward_static_call([$this->resolveSentryIntegration(), 'getInstance']);
     }
 
     public function testCaptureException(): void
     {
-        $this->resolveSentryIntegration()::captureException(new \Exception());
+        forward_static_call([$this->resolveSentryIntegration(), 'captureException'], new \Exception());
         self::assertNotNull($this->getHubFromContainer()->getLastEventId());
     }
 }
