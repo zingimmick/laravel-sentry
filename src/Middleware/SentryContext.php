@@ -7,9 +7,9 @@ namespace Zing\LaravelSentry\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Factory;
-use function Sentry\configureScope;
 use Sentry\State\Scope;
 use Zing\LaravelSentry\Support\SentryIntegration;
+use function Sentry\configureScope;
 
 class SentryContext
 {
