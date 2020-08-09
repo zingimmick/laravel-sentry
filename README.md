@@ -1,4 +1,4 @@
-# laravel-sentry
+# Laravel Sentry
 
 <p align="center">
 <a href="https://github.com/zingimmick/laravel-sentry/actions"><img src="https://github.com/zingimmick/laravel-sentry/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -11,3 +11,15 @@
 <a href="https://github.styleci.io/repos/260966413"><img src="https://github.styleci.io/repos/260966413/shield?branch=master" alt="StyleCI Shield"></a>
 <a href="https://codeclimate.com/github/zingimmick/laravel-sentry/maintainability"><img src="https://api.codeclimate.com/v1/badges/5a95a074bcd38fd38da0/maintainability" /></a>
 </p>
+
+> **Requires [PHP 7.2.0+](https://php.net/releases/)**
+
+Require Laravel Sentry using [Composer](https://getcomposer.org):
+
+```bash
+composer require zing/laravel-sentry --dev
+```
+
+## License
+
+Laravel Sentry is an open-sourced software licensed under the [MIT license](LICENSE).
