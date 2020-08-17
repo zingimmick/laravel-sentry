@@ -74,7 +74,6 @@ class SentryContext
     {
         return [
             'id' => $user->getAuthIdentifier(),
-            'email' => $user->email,
         ];
     }
 }
