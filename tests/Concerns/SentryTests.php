@@ -34,7 +34,6 @@ trait SentryTests
         $this->resolveSentryContext(Auth::getFacadeRoot())->handle($request, $this->createNext($nextParam));
         $userContext = $this->getHubFromContainer()->pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
-        self::assertSame($user->email, $userContext->getEmail());
         $this->assertSame($request, $nextParam);
     }
 
@@ -45,7 +44,6 @@ trait SentryTests
         $this->resolveSentryContext(Auth::getFacadeRoot())->handle($request, $this->createNext($nextParam));
         $userContext = $this->getHubFromContainer()->pushScope()->applyToEvent(new Event(), [])->getUserContext();
         $this->assertNull($userContext->getId());
-        self::assertNull($userContext->getEmail());
         $this->assertSame($request, $nextParam);
     }
 
