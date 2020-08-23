@@ -10,6 +10,23 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Added
+
+- [#18] Added tentative support for Laravel 8.0
+- [#17] Added tentative support for PHP 8.0
+
+### Changed
+
+- [#16] Bump zing/coding-standard from ^2.0 to ^2.3
+- [#15] Improve coding standard config
+- [#14] Bump codecov/codecov-action from v1.0.12 to v1.0.13
+
+### Fixed
+
+- [#13] Fix interfaces cannot have properties
+
+## [0.2.0] - 2020-08-17
+
 - [#12] Improve doc
 - [#11] Use double pipe for OR condition
 - [#10] Update from template: kodiak and renovate
@@ -41,3 +58,10 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#3]: https://github.com/zingimmick/laravel-sentry/pull/3
 [#2]: https://github.com/zingimmick/laravel-sentry/pull/2
 [#1]: https://github.com/zingimmick/laravel-sentry/pull/1
+[0.2.0]: https://github.com/zingimmick/laravel-sentry/compare/0.1.1...0.2.0
+[#18]: https://github.com/zingimmick/laravel-sentry/pull/18
+[#17]: https://github.com/zingimmick/laravel-sentry/pull/17
+[#16]: https://github.com/zingimmick/laravel-sentry/pull/16
+[#15]: https://github.com/zingimmick/laravel-sentry/pull/15
+[#14]: https://github.com/zingimmick/laravel-sentry/pull/14
+[#13]: https://github.com/zingimmick/laravel-sentry/pull/13
