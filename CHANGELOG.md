@@ -10,6 +10,16 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Changed
+
+- [#20] Support for GuzzleHttp 7
+
+### Fixed
+
+- [#19] Require nesbot/carbon ^2.31 to fix php-8-lowest compatible exception
+
+## [0.3.0] - 2020-08-23
+
 ### Added
 
 - [#18] Added tentative support for Laravel 8.0
@@ -65,3 +75,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#15]: https://github.com/zingimmick/laravel-sentry/pull/15
 [#14]: https://github.com/zingimmick/laravel-sentry/pull/14
 [#13]: https://github.com/zingimmick/laravel-sentry/pull/13
+[#20]: https://github.com/zingimmick/laravel-sentry/pull/20
+[#19]: https://github.com/zingimmick/laravel-sentry/pull/19
+[0.3.0]: https://github.com/zingimmick/laravel-sentry/compare/0.2.0...0.3.0
