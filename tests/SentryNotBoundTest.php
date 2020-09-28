@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mockery;
 use Sentry\Event;
-use Sentry\State\Hub;
+use Sentry\SentrySdk;
 use Zing\LaravelSentry\Middleware\SentryContext;
 
 class SentryNotBoundTest extends TestCase
@@ -33,9 +33,8 @@ class SentryNotBoundTest extends TestCase
         $request = Mockery::mock(Request::class);
 
         (new SentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext($nextParam));
-        $userContext = Hub::getCurrent()->pushScope()->applyToEvent(new Event(), [])->getUserContext();
-        $this->assertNull($userContext->getId());
-        self::assertNull($userContext->getEmail());
+        $userContext = SentrySdk::getCurrentHub()->pushScope()->applyToEvent(Event::createEvent())->getUser();
+        $this->assertNull($userContext);
         $this->assertSame($request, $nextParam);
     }
 }
