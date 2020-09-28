@@ -15,7 +15,7 @@
         "http-interop/http-factory-guzzle": "^1.0",
         "illuminate/container": "^6.0 || ^7.0 || ^8.0",
         "php-http/curl-client": "^2.0",
-        "sentry/sentry": "^2.4",
+        "sentry/sentry": "^3.0",
         "sentry/sentry-laravel": "^1.2"
     },
     "replace": {
