@@ -12,6 +12,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#25] Support for sentry/sentry ^3.0
+
+## [1.0.0] - 2020-09-28
+
+### Changed
+
 - [#21] Bump paambaati/codeclimate-action from v2.6.0 to v2.7.1
 
 ### Removed
@@ -90,3 +96,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [0.3.0]: https://github.com/zingimmick/laravel-sentry/compare/0.2.0...0.3.0
 [#24]: https://github.com/zingimmick/laravel-sentry/pull/24
 [#21]: https://github.com/zingimmick/laravel-sentry/pull/21
+[#25]: https://github.com/zingimmick/laravel-sentry/pull/25
+[0.3.1]: https://github.com/zingimmick/laravel-sentry/compare/0.3.0...0.3.1
+[1.0.0]: https://github.com/zingimmick/laravel-sentry/compare/0.3.1...1.0.0
