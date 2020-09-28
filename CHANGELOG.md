@@ -12,6 +12,16 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#21] Bump paambaati/codeclimate-action from v2.6.0 to v2.7.1
+
+### Removed
+
+- [#24] Remove compatiable code for guzzlehttp/guzzle
+
+## [0.3.1] - 2020-09-13
+
+### Changed
+
 - [#20] Support for GuzzleHttp 7
 
 ### Fixed
@@ -78,3 +88,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#20]: https://github.com/zingimmick/laravel-sentry/pull/20
 [#19]: https://github.com/zingimmick/laravel-sentry/pull/19
 [0.3.0]: https://github.com/zingimmick/laravel-sentry/compare/0.2.0...0.3.0
+[#24]: https://github.com/zingimmick/laravel-sentry/pull/24
+[#21]: https://github.com/zingimmick/laravel-sentry/pull/21
