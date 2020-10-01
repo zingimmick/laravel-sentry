@@ -21,7 +21,7 @@
         "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
         "roave/security-advisories": "dev-master",
         "symfony/options-resolver": "^4.4.9 || ^5.0",
-        "zing/coding-standard": "^2.5"
+        "zing/coding-standard": "^2.6"
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
