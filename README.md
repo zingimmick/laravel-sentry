@@ -20,6 +20,33 @@ Require Laravel Sentry using [Composer](https://getcomposer.org):
 composer require zing/laravel-sentry --dev
 ```
 
+## Usage
+
+### Add User context
+
+```php
+use Zing\LaravelSentry\Middleware\SentryContext;
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
+class Kernel extends HttpKernel
+{
+    protected $middleware = [
+        // ...
+        SentryContext::class,
+    ];
+
+    // ...
+}
+```
+
+### Send exception directly(Issue Grouping)
+
+```php
+use Zing\LaravelSentry\Support\SentryIntegration;
+
+SentryIntegration::captureException(new Exception(""));
+```
+
 ## License
 
 Laravel Sentry is an open-sourced software licensed under the [MIT license](LICENSE).

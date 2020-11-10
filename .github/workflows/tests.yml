@@ -39,7 +39,9 @@ jobs:
         if: "matrix.php < 8"
 
       - name: Install dependencies
-        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --ignore-platform-reqs
+        run: |
+            composer require "phpunit/phpunit:^9.3.3"
+            composer update --${{ matrix.stability }} --prefer-dist --no-interaction --ignore-platform-reqs
         if: "matrix.php >= 8"
 
       - name: Execute tests
