@@ -8,7 +8,7 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
-## Unreleased
+## [2.0.0] - 2020-09-28
 
 ### Changed
 
