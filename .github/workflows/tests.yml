@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         php: [7.2, 7.3, 7.4, 8.0]
         stability: [prefer-lowest, prefer-stable]
@@ -34,15 +34,15 @@ jobs:
           php-version: ${{ matrix.php }}
           coverage: xdebug
 
-      - name: Install dependencies
-        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
-        if: "matrix.php < 8"
+      - name: Setup problem matchers for PHPUnit
+        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Remove dev dependencies not support for PHP 8.0
+        run: composer remove zing/coding-standard --dev --no-update
+        if: "matrix.php >= 8"
 
       - name: Install dependencies
-        run: |
-            composer require "phpunit/phpunit:^9.3.3" --no-update
-            composer update --${{ matrix.stability }} --prefer-dist --no-interaction --ignore-platform-reqs
-        if: "matrix.php >= 8"
+        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
         run: composer run-script test:phpunit -- --coverage-clover coverage.xml
@@ -54,7 +54,6 @@ jobs:
 
       - name: Upload coverage to Code Climate
         uses: paambaati/codeclimate-action@v2.7.4
-        if: "matrix.php < 8"
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
