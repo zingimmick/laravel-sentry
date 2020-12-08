@@ -10,6 +10,17 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+- [#34] Bump codecov/codecov-action from v1.0.14 to v1.0.15
+- [#31] Update actions/checkout action to v2
+- [#30] Bump codecov/codecov-action from v1.0.13 to v1.0.14
+- [#28] Bump paambaati/codeclimate-action from v2.7.1 to v2.7.4
+
+### Fixed
+
+- [#29] Fix coverage for PHP 8.0
+
+## [2.0.0] - 2020-09-28
+
 ### Changed
 
 - [#25] Support for sentry/sentry ^3.0
@@ -99,3 +110,9 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#25]: https://github.com/zingimmick/laravel-sentry/pull/25
 [0.3.1]: https://github.com/zingimmick/laravel-sentry/compare/0.3.0...0.3.1
 [1.0.0]: https://github.com/zingimmick/laravel-sentry/compare/0.3.1...1.0.0
+[#34]: https://github.com/zingimmick/laravel-sentry/pull/34
+[#31]: https://github.com/zingimmick/laravel-sentry/pull/31
+[#30]: https://github.com/zingimmick/laravel-sentry/pull/30
+[#29]: https://github.com/zingimmick/laravel-sentry/pull/29
+[#28]: https://github.com/zingimmick/laravel-sentry/pull/28
+[2.0.0]: https://github.com/zingimmick/laravel-sentry/compare/0.3.1...2.0.0
