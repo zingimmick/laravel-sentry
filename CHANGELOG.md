@@ -10,6 +10,13 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Changed
+
+- [#36] Provisional support for PHP 8.0
+- [#35] Update phpunit/phpunit requirement from ^7.5.15 || 8.5.8 || ^9.3.3 to ^7.5.15 || 8.5.8 || ^9.3.3 || ^8.0.0
+
+## [2.0.1] - 2020-11-23
+
 - [#34] Bump codecov/codecov-action from v1.0.14 to v1.0.15
 - [#31] Update actions/checkout action to v2
 - [#30] Bump codecov/codecov-action from v1.0.13 to v1.0.14
@@ -116,3 +123,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#29]: https://github.com/zingimmick/laravel-sentry/pull/29
 [#28]: https://github.com/zingimmick/laravel-sentry/pull/28
 [2.0.0]: https://github.com/zingimmick/laravel-sentry/compare/0.3.1...2.0.0
+[#36]: https://github.com/zingimmick/laravel-sentry/pull/36
+[#35]: https://github.com/zingimmick/laravel-sentry/pull/35
+[2.0.1]: https://github.com/zingimmick/laravel-sentry/compare/2.0.0...2.0.1
