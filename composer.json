@@ -1,10 +1,7 @@
 {
     "name": "zing/laravel-sentry",
     "description": "Provides sentry context middleware.",
-    "keywords": [
-        "laravel",
-        "sentry"
-    ],
+    "keywords": ["laravel", "sentry"],
     "license": "MIT",
     "authors": [
         {
@@ -24,8 +21,6 @@
         "roave/security-advisories": "dev-master",
         "zing/coding-standard": "^2.6 || ^3.2"
     },
-    "prefer-stable": true,
-    "minimum-stability": "dev",
     "config": {
         "sort-packages": true,
         "preferred-install": "dist"
@@ -57,5 +52,7 @@
         "test": [
             "@test:phpunit"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
