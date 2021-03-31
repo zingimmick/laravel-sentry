@@ -33,7 +33,9 @@ trait SentryTests
         $request = Mockery::mock(Request::class);
         $nextParam = null;
         $this->resolveSentryContext(Auth::getFacadeRoot())->handle($request, $this->createNext($nextParam));
-        $userContext = $this->getHubFromContainer()->pushScope()->applyToEvent(Event::createEvent())->getUser();
+        $userContext = $this->getHubFromContainer()
+            ->pushScope()
+            ->applyToEvent(Event::createEvent())->getUser();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         $this->assertSame($request, $nextParam);
     }
@@ -43,7 +45,9 @@ trait SentryTests
         $request = Mockery::mock(Request::class);
 
         $this->resolveSentryContext(Auth::getFacadeRoot())->handle($request, $this->createNext($nextParam));
-        $userContext = $this->getHubFromContainer()->pushScope()->applyToEvent(Event::createEvent())->getUser();
+        $userContext = $this->getHubFromContainer()
+            ->pushScope()
+            ->applyToEvent(Event::createEvent())->getUser();
         $this->assertNull($userContext);
         $this->assertSame($request, $nextParam);
     }

@@ -14,10 +14,7 @@ class SentryContextWithCustomAliasTest extends TestCase
 
     protected function getPackageProviders($app): array
     {
-        return [
-            AuthServiceProvider::class,
-            CustomSentryServiceProvider::class,
-        ];
+        return [AuthServiceProvider::class, CustomSentryServiceProvider::class];
     }
 
     protected function resolveSentryContext($auth)

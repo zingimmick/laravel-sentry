@@ -12,10 +12,7 @@ class TestCase extends BaseTestCase
 {
     protected function getPackageProviders($app): array
     {
-        return [
-            AuthServiceProvider::class,
-            ServiceProvider::class,
-        ];
+        return [AuthServiceProvider::class, ServiceProvider::class];
     }
 
     protected function createNext(&$nextParam): callable

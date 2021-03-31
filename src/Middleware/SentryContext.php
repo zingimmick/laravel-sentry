@@ -50,7 +50,9 @@ class SentryContext
 
         configureScope(
             function (Scope $scope): void {
-                $scope->setUser($this->resolveUserContext($this->auth->getDefaultDriver(), $this->auth->guard()->user()));
+                $scope->setUser(
+                    $this->resolveUserContext($this->auth->getDefaultDriver(), $this->auth->guard()->user())
+                );
             }
         );
 

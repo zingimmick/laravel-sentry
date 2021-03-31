@@ -16,9 +16,7 @@ class SentryNotBoundTest extends TestCase
 {
     protected function getPackageProviders($app): array
     {
-        return [
-            AuthServiceProvider::class,
-        ];
+        return [AuthServiceProvider::class];
     }
 
     public function testSentryNotBound(): void
