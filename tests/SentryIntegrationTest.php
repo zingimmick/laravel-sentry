@@ -12,7 +12,8 @@ class SentryIntegrationTest extends TestCase
     public function testNotBound(): void
     {
         $container = \Mockery::mock(Container::class);
-        $container->shouldReceive('bound')->withArgs(['sentry'])->andReturn(false);
+        $container->shouldReceive('bound')
+            ->withArgs(['sentry'])->andReturn(false);
         Container::setInstance($container);
         self::assertFalse(SentryIntegration::bound());
     }
