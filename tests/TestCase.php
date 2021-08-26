@@ -23,7 +23,7 @@ class TestCase extends BaseTestCase
         };
     }
 
-    protected function defineEnvironment($app)
+    protected function defineEnvironment($app): void
     {
         Config::set('auth.guards.api', [
             'driver' => 'token',
