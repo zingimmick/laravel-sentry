@@ -31,7 +31,7 @@ jobs:
           key: dependencies-php-${{ matrix.php }}-composer-${{ matrix.stability }}-${{ hashFiles('composer.json') }}
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.14.0
+        uses: shivammathur/setup-php@2.15.0
         with:
           php-version: ${{ matrix.php }}
           coverage: xdebug
