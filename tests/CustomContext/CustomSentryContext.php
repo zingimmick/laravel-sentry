@@ -11,8 +11,6 @@ class CustomSentryContext extends SentryContext
     /**
      * @param string $guard
      * @param \Zing\LaravelSentry\Tests\User $user
-     *
-     * @return array
      */
     protected function resolveUserContext($guard, $user): array
     {

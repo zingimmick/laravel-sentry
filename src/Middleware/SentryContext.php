@@ -22,8 +22,6 @@ class SentryContext
 
     /**
      * Create a new middleware instance.
-     *
-     * @param \Illuminate\Contracts\Auth\Factory $auth
      */
     public function __construct(Factory $auth)
     {
@@ -34,7 +32,6 @@ class SentryContext
      * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \Closure $next
      *
      * @return mixed
      */
@@ -66,9 +63,6 @@ class SentryContext
 
     /**
      * @param string $guard
-     * @param \Illuminate\Contracts\Auth\Authenticatable $user
-     *
-     * @return array
      */
     protected function resolveUserContext($guard, Authenticatable $user): array
     {
