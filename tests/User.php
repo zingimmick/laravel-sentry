@@ -15,5 +15,8 @@ class User extends Model implements Authenticatable
 {
     use \Illuminate\Auth\Authenticatable;
 
+    /**
+     * @var string[]
+     */
     protected $fillable = ['id', 'email', 'username'];
 }

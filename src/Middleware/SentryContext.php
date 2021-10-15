@@ -31,11 +31,9 @@ class SentryContext
     /**
      * Handle an incoming request.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(\Illuminate\Http\Request $request, Closure $next)
     {
         if ($this->auth->guard()->guest()) {
             return $next($request);
@@ -62,9 +60,9 @@ class SentryContext
     }
 
     /**
-     * @param string $guard
+     * @return array<string, mixed>
      */
-    protected function resolveUserContext($guard, Authenticatable $user): array
+    protected function resolveUserContext(string $guard, Authenticatable $user): array
     {
         return [
             'id' => $user->getAuthIdentifier(),

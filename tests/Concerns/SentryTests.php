@@ -52,11 +52,17 @@ trait SentryTests
         $this->assertSame($request, $nextParam);
     }
 
-    protected function resolveSentryContext($auth)
+    /**
+     * @param mixed $auth
+     */
+    protected function resolveSentryContext($auth): SentryContext
     {
         return new SentryContext($auth);
     }
 
+    /**
+     * @return class-string<\Zing\LaravelSentry\Support\SentryIntegration>
+     */
     protected function resolveSentryIntegration()
     {
         return SentryIntegration::class;
