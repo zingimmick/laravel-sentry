@@ -9,10 +9,9 @@ use Zing\LaravelSentry\Middleware\SentryContext;
 class CustomSentryContext extends SentryContext
 {
     /**
-     * @param string $guard
-     * @param \Zing\LaravelSentry\Tests\User $user
+     * @return array<string, mixed>|mixed[]
      */
-    protected function resolveUserContext($guard, $user): array
+    protected function resolveUserContext(string $guard, \Illuminate\Contracts\Auth\Authenticatable $user): array
     {
         if ($guard === 'api') {
             return [

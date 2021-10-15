@@ -12,16 +12,24 @@ class SentryContextWithCustomAliasTest extends TestCase
 {
     use SentryTests;
 
+    /**
+     * @param mixed $app
+     *
+     * @return class-string[]
+     */
     protected function getPackageProviders($app): array
     {
         return [AuthServiceProvider::class, CustomSentryServiceProvider::class];
     }
 
-    protected function resolveSentryContext($auth)
+    protected function resolveSentryContext($auth): CustomSentryContext
     {
         return new CustomSentryContext($auth);
     }
 
+    /**
+     * @return class-string<\Zing\LaravelSentry\Tests\CustomAlias\CustomSentryIntegration>
+     */
     protected function resolveSentryIntegration()
     {
         return CustomSentryIntegration::class;

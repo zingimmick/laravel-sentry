@@ -14,6 +14,11 @@ use Zing\LaravelSentry\Middleware\SentryContext;
 
 class SentryNotBoundTest extends TestCase
 {
+    /**
+     * @param mixed $app
+     *
+     * @return array<class-string<\Illuminate\Auth\AuthServiceProvider>>
+     */
     protected function getPackageProviders($app): array
     {
         return [AuthServiceProvider::class];

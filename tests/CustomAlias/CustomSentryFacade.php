@@ -8,7 +8,7 @@ use Sentry\Laravel\Facade;
 
 class CustomSentryFacade extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'custom-sentry';
     }

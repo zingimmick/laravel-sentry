@@ -6,5 +6,8 @@ namespace Zing\LaravelSentry\Tests\CustomAlias;
 
 class CustomSentryServiceProvider extends \Sentry\Laravel\ServiceProvider
 {
+    /**
+     * @var string
+     */
     public static $abstract = 'custom-sentry';
 }
