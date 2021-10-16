@@ -43,11 +43,12 @@ class SentryContext
             return $next($request);
         }
 
+        /** @var \Illuminate\Contracts\Auth\Authenticatable $user */
+        $user = $this->auth->guard()
+            ->user();
         configureScope(
-            function (Scope $scope): void {
-                $scope->setUser(
-                    $this->resolveUserContext($this->auth->getDefaultDriver(), $this->auth->guard()->user())
-                );
+            function (Scope $scope) use ($user): void {
+                $scope->setUser($this->resolveUserContext($this->auth->getDefaultDriver(), $user));
             }
         );
 

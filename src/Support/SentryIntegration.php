@@ -7,6 +7,7 @@ namespace Zing\LaravelSentry\Support;
 use Illuminate\Container\Container;
 use Sentry\Laravel\ServiceProvider;
 use Sentry\State\Hub;
+use Throwable;
 
 class SentryIntegration
 {
@@ -20,7 +21,7 @@ class SentryIntegration
         return Container::getInstance()->bound(static::getAbstract());
     }
 
-    public static function captureException($exception): void
+    public static function captureException(Throwable $exception): void
     {
         if (static::bound()) {
             static::getInstance()->captureException($exception);

@@ -8,8 +8,8 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property mixed email
- * @property mixed username
+ * @property string $email
+ * @property string $username
  */
 class User extends Model implements Authenticatable
 {
