@@ -29,9 +29,12 @@ class SentryContextTest extends TestCase
         $request = Mockery::mock(Request::class);
 
         (new CustomSentryContext(Auth::getFacadeRoot()))->handle($request, $this->createNext($nextParam));
-        $userContext = $this->getHubFromContainer()
+        /** @var \Sentry\Event $event */
+        $event = $this->getHubFromContainer()
             ->pushScope()
-            ->applyToEvent(Event::createEvent())->getUser();
+            ->applyToEvent(Event::createEvent());
+        /** @var \Sentry\UserDataBag $userContext */
+        $userContext = $event->getUser();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->username, $userContext->getUsername());
         $this->assertSame($request, $nextParam);

@@ -9,6 +9,8 @@ use Zing\LaravelSentry\Middleware\SentryContext;
 class CustomSentryContext extends SentryContext
 {
     /**
+     * @param \Zing\LaravelSentry\Tests\User $user
+     *
      * @return array<string, mixed>|mixed[]
      */
     protected function resolveUserContext(string $guard, \Illuminate\Contracts\Auth\Authenticatable $user): array

@@ -11,12 +11,20 @@ use Sentry\Laravel\ServiceProvider;
 
 class TestCase extends BaseTestCase
 {
+    /**
+     * @param \Illuminate\Foundation\Application $app
+     *
+     * @return array<class-string<\Illuminate\Support\ServiceProvider>>
+     */
     protected function getPackageProviders($app): array
     {
         return [AuthServiceProvider::class, ServiceProvider::class];
     }
 
-    protected function createNext(&$nextParam): callable
+    /**
+     * @param mixed $nextParam
+     */
+    protected function createNext(&$nextParam): \Closure
     {
         return static function ($param) use (&$nextParam): void {
             $nextParam = $param;

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Zing\LaravelSentry\Tests\CustomAlias;
 
 use Illuminate\Auth\AuthServiceProvider;
+use Illuminate\Contracts\Auth\Factory;
 use Zing\LaravelSentry\Tests\Concerns\SentryTests;
 use Zing\LaravelSentry\Tests\TestCase;
 
@@ -22,7 +23,7 @@ class SentryContextWithCustomAliasTest extends TestCase
         return [AuthServiceProvider::class, CustomSentryServiceProvider::class];
     }
 
-    protected function resolveSentryContext($auth): CustomSentryContext
+    protected function resolveSentryContext(Factory $auth): CustomSentryContext
     {
         return new CustomSentryContext($auth);
     }

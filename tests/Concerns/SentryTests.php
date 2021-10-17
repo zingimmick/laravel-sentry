@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Zing\LaravelSentry\Tests\Concerns;
 
+use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mockery;
@@ -33,29 +34,33 @@ trait SentryTests
         $request = Mockery::mock(Request::class);
         $nextParam = null;
         $this->resolveSentryContext(Auth::getFacadeRoot())->handle($request, $this->createNext($nextParam));
-        $userContext = $this->getHubFromContainer()
+        /** @var \Sentry\Event $event */
+        $event = $this->getHubFromContainer()
             ->pushScope()
-            ->applyToEvent(Event::createEvent())->getUser();
+            ->applyToEvent(Event::createEvent());
+        /** @var \Sentry\UserDataBag $userContext */
+        $userContext = $event->getUser();
         $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
         $this->assertSame($request, $nextParam);
     }
 
     public function testGuest(): void
     {
+        $nextParam = null;
         $request = Mockery::mock(Request::class);
 
         $this->resolveSentryContext(Auth::getFacadeRoot())->handle($request, $this->createNext($nextParam));
-        $userContext = $this->getHubFromContainer()
+        /** @var \Sentry\Event $event */
+        $event = $this->getHubFromContainer()
             ->pushScope()
-            ->applyToEvent(Event::createEvent())->getUser();
+            ->applyToEvent(Event::createEvent());
+        /** @var \Sentry\UserDataBag $userContext */
+        $userContext = $event->getUser();
         $this->assertNull($userContext);
         $this->assertSame($request, $nextParam);
     }
 
-    /**
-     * @param mixed $auth
-     */
-    protected function resolveSentryContext($auth): SentryContext
+    protected function resolveSentryContext(Factory $auth): SentryContext
     {
         return new SentryContext($auth);
     }
