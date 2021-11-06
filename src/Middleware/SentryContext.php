@@ -11,6 +11,9 @@ use Sentry\State\Scope;
 use Zing\LaravelSentry\Support\SentryIntegration;
 use function Sentry\configureScope;
 
+/**
+ * @deprecated Use \Illuminate\Foundation\Exceptions\Handler::context() instead
+ */
 class SentryContext
 {
     /**

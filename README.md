@@ -11,6 +11,8 @@
 <a href="https://codeclimate.com/github/zingimmick/laravel-sentry/maintainability"><img src="https://api.codeclimate.com/v1/badges/5a95a074bcd38fd38da0/maintainability" /></a>
 </p>
 
+**Laravel Sentry is archived**. Because most functions can be replaced by official functions and have better fault tolerance.
+
 > **Requires [PHP 7.2.0+](https://php.net/releases/)**
 
 Require Laravel Sentry using [Composer](https://getcomposer.org):

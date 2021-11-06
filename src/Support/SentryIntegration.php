@@ -9,6 +9,9 @@ use Sentry\Laravel\ServiceProvider;
 use Sentry\State\Hub;
 use Throwable;
 
+/**
+ * @deprecated Use report($exception) instead
+ */
 class SentryIntegration
 {
     public static function getAbstract(): string
