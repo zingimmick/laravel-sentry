@@ -33,8 +33,9 @@ class SentryIntegration
 
     public static function getInstance(): Hub
     {
-        /** @var Hub $hub */
-        $hub= Container::getInstance()->make(static::getAbstract());
+        /** @var \Sentry\State\Hub $hub */
+        $hub = Container::getInstance()->make(static::getAbstract());
+
         return $hub;
     }
 }

@@ -28,7 +28,7 @@ class SentryContextTest extends TestCase
         Auth::setUser($user);
         $request = Mockery::mock(Request::class);
         /** @var \Illuminate\Contracts\Auth\Factory $auth */
-$auth=Auth::getFacadeRoot();
+        $auth = Auth::getFacadeRoot();
         (new CustomSentryContext($auth))->handle($request, $this->createNext($nextParam));
         /** @var \Sentry\Event $event */
         $event = $this->getHubFromContainer()

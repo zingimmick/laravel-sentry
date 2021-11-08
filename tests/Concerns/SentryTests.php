@@ -34,8 +34,9 @@ trait SentryTests
         $request = Mockery::mock(Request::class);
         $nextParam = null;
         /** @var \Illuminate\Contracts\Auth\Factory $auth */
-        $auth=Auth::getFacadeRoot();
-        $this->resolveSentryContext($auth)->handle($request, $this->createNext($nextParam));
+        $auth = Auth::getFacadeRoot();
+        $this->resolveSentryContext($auth)
+            ->handle($request, $this->createNext($nextParam));
         /** @var \Sentry\Event $event */
         $event = $this->getHubFromContainer()
             ->pushScope()
@@ -51,8 +52,9 @@ trait SentryTests
         $nextParam = null;
         $request = Mockery::mock(Request::class);
         /** @var \Illuminate\Contracts\Auth\Factory $auth */
-        $auth=Auth::getFacadeRoot();
-        $this->resolveSentryContext($auth)->handle($request, $this->createNext($nextParam));
+        $auth = Auth::getFacadeRoot();
+        $this->resolveSentryContext($auth)
+            ->handle($request, $this->createNext($nextParam));
         /** @var \Sentry\Event $event */
         $event = $this->getHubFromContainer()
             ->pushScope()
@@ -78,8 +80,9 @@ trait SentryTests
 
     protected function getHubFromContainer(): HubInterface
     {
-        /** @var HubInterface $hub */
-        $hub= forward_static_call([$this->resolveSentryIntegration(), 'getInstance']);
+        /** @var \Sentry\State\HubInterface $hub */
+        $hub = forward_static_call([$this->resolveSentryIntegration(), 'getInstance']);
+
         return $hub;
     }
 
