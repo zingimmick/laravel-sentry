@@ -7,13 +7,11 @@ namespace Zing\LaravelSentry\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Factory;
+use Illuminate\Http\Request;
 use Sentry\State\Scope;
 use Zing\LaravelSentry\Support\SentryIntegration;
 use function Sentry\configureScope;
 
-/**
- * @deprecated Use \Illuminate\Foundation\Exceptions\Handler::context() instead
- */
 class SentryContext
 {
     /**
@@ -36,7 +34,7 @@ class SentryContext
      *
      * @return mixed
      */
-    public function handle(\Illuminate\Http\Request $request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if ($this->auth->guard()->guest()) {
             return $next($request);

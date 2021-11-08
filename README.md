@@ -11,19 +11,17 @@
 <a href="https://codeclimate.com/github/zingimmick/laravel-sentry/maintainability"><img src="https://api.codeclimate.com/v1/badges/5a95a074bcd38fd38da0/maintainability" /></a>
 </p>
 
-**Laravel Sentry is archived**. Because most functions can be replaced by official functions and have better fault tolerance.
-
 > **Requires [PHP 7.2.0+](https://php.net/releases/)**
 
 Require Laravel Sentry using [Composer](https://getcomposer.org):
 
 ```bash
-composer require zing/laravel-sentry --dev
+composer require zing/laravel-sentry
 ```
 
 ## Usage
 
-### Add User context
+### Add user context
 
 ```php
 use Zing\LaravelSentry\Middleware\SentryContext;
@@ -40,12 +38,30 @@ class Kernel extends HttpKernel
 }
 ```
 
-### Send exception directly(Issue Grouping)
+### Custom user context
 
 ```php
-use Zing\LaravelSentry\Support\SentryIntegration;
+use Zing\LaravelSentry\Middleware\SentryContext;
 
-SentryIntegration::captureException(new Exception(""));
+class CustomSentryContext extends SentryContext
+{
+    /**
+     * @param \Zing\LaravelSentry\Tests\User $user
+     *
+     * @return array<string, mixed>|mixed[]
+     */
+    protected function resolveUserContext(string $guard, \Illuminate\Contracts\Auth\Authenticatable $user): array
+    {
+        if ($guard === 'api') {
+            return [
+                'id' => $user->getAuthIdentifier(),
+                'username' => $user->username,
+            ];
+        }
+
+        return parent::resolveUserContext($guard, $user);
+    }
+}
 ```
 
 ## License
