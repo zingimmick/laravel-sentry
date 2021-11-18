@@ -26,7 +26,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         // bug
         ReturnAssignmentFixer::class,
         // https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/5776
-        FunctionTypehintSpaceFixer::class
+        FunctionTypehintSpaceFixer::class,
     ]);
     $parameters->set(
         Option::PATHS,
