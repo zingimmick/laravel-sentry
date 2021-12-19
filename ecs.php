@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
-use PhpCsFixer\Fixer\FunctionNotation\FunctionTypehintSpaceFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitInternalClassFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestClassRequiresCoversFixer;
 use PhpCsFixer\Fixer\ReturnNotation\ReturnAssignmentFixer;
@@ -25,8 +24,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
         // bug
         ReturnAssignmentFixer::class,
-        // https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/5776
-        FunctionTypehintSpaceFixer::class,
     ]);
     $parameters->set(
         Option::PATHS,
