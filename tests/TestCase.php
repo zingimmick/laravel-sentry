@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Config;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Sentry\Laravel\ServiceProvider;
 
-class TestCase extends BaseTestCase
+abstract class TestCase extends BaseTestCase
 {
     /**
      * @param \Illuminate\Foundation\Application $app

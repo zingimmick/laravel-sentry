@@ -7,7 +7,10 @@ namespace Zing\LaravelSentry\Tests;
 use Illuminate\Container\Container;
 use Zing\LaravelSentry\Support\SentryIntegration;
 
-class SentryIntegrationTest extends TestCase
+/**
+ * @internal
+ */
+final class SentryIntegrationTest extends TestCase
 {
     public function testNotBound(): void
     {

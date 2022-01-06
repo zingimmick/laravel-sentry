@@ -11,7 +11,10 @@ use Sentry\Event;
 use Zing\LaravelSentry\Tests\Concerns\SentryTests;
 use Zing\LaravelSentry\Tests\CustomContext\CustomSentryContext;
 
-class SentryContextTest extends TestCase
+/**
+ * @internal
+ */
+final class SentryContextTest extends TestCase
 {
     use SentryTests;
 
