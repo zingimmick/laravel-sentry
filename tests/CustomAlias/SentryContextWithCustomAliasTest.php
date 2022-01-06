@@ -9,7 +9,10 @@ use Illuminate\Contracts\Auth\Factory;
 use Zing\LaravelSentry\Tests\Concerns\SentryTests;
 use Zing\LaravelSentry\Tests\TestCase;
 
-class SentryContextWithCustomAliasTest extends TestCase
+/**
+ * @internal
+ */
+final class SentryContextWithCustomAliasTest extends TestCase
 {
     use SentryTests;
 

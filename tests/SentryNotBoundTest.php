@@ -12,7 +12,10 @@ use Sentry\Event;
 use Sentry\SentrySdk;
 use Zing\LaravelSentry\Middleware\SentryContext;
 
-class SentryNotBoundTest extends TestCase
+/**
+ * @internal
+ */
+final class SentryNotBoundTest extends TestCase
 {
     /**
      * @param mixed $app
