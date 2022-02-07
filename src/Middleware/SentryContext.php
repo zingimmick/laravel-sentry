@@ -31,8 +31,10 @@ class SentryContext
 
     /**
      * Handle an incoming request.
+     *
+     * @return mixed
      */
-    public function handle(Request $request, Closure $next): mixed
+    public function handle(Request $request, Closure $next)
     {
         if ($this->auth->guard()->guest()) {
             return $next($request);
