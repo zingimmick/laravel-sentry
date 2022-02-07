@@ -16,8 +16,10 @@ class SentryContext
 {
     /**
      * The authentication factory instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Factory
      */
-    protected \Illuminate\Contracts\Auth\Factory $auth;
+    protected $auth;
 
     /**
      * Create a new middleware instance.
