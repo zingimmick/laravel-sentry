@@ -11,6 +11,7 @@ jobs:
         name: Checkout code
         uses: actions/checkout@v2.4.0
         with:
+          token: ${{ secrets.ACCESS_TOKEN }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
 
@@ -24,7 +25,9 @@ jobs:
       - name: Install dependencies
         uses: ramsey/composer-install@v1
 
-      - run: composer fix
+      - run: vendor/bin/rector process --ansi
+
+      - run: vendor/bin/ecs check --fix --ansi
 
       - if: github.event.pull_request.head.repo.full_name == github.repository
         uses: EndBug/add-and-commit@v8
