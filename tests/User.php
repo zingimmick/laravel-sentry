@@ -18,5 +18,5 @@ class User extends Model implements Authenticatable
     /**
      * @var string[]
      */
-    protected $fillable = ['id', 'email', 'username'];
+    protected array $fillable = ['id', 'email', 'username'];
 }

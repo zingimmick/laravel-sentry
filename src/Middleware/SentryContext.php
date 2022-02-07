@@ -16,10 +16,8 @@ class SentryContext
 {
     /**
      * The authentication factory instance.
-     *
-     * @var \Illuminate\Contracts\Auth\Factory
      */
-    protected $auth;
+    protected \Illuminate\Contracts\Auth\Factory $auth;
 
     /**
      * Create a new middleware instance.
@@ -31,10 +29,8 @@ class SentryContext
 
     /**
      * Handle an incoming request.
-     *
-     * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): mixed
     {
         if ($this->auth->guard()->guest()) {
             return $next($request);
