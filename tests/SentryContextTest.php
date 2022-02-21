@@ -42,8 +42,8 @@ final class SentryContextTest extends TestCase
 
         /** @var \Sentry\UserDataBag $userContext */
         $userContext = $event->getUser();
-        $this->assertSame($user->getAuthIdentifier(), $userContext->getId());
+        self::assertSame($user->getAuthIdentifier(), $userContext->getId());
         self::assertSame($user->username, $userContext->getUsername());
-        $this->assertSame($request, $nextParam);
+        self::assertSame($request, $nextParam);
     }
 }
