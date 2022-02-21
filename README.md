@@ -1,7 +1,7 @@
 # Laravel Sentry
 
 <p align="center">
-<a href="https://github.com/zingimmick/laravel-sentry/actions"><img src="https://github.com/zingimmick/laravel-sentry/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/zingimmick/laravel-sentry/actions"><img src="https://github.com/zingimmick/laravel-sentry/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
 <a href="https://codecov.io/gh/zingimmick/laravel-sentry"><img src="https://codecov.io/gh/zingimmick/laravel-sentry/branch/master/graph/badge.svg" alt="Code Coverage" /></a>
 <a href="https://packagist.org/packages/zing/laravel-sentry"><img src="https://poser.pugx.org/zing/laravel-sentry/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/zing/laravel-sentry"><img src="https://poser.pugx.org/zing/laravel-sentry/downloads" alt="Total Downloads"></a>
