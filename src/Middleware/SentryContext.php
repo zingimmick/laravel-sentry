@@ -62,7 +62,7 @@ class SentryContext
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array{id: mixed}
      */
     protected function resolveUserContext(string $guard, Authenticatable $user): array
     {
