@@ -34,7 +34,7 @@ final class SentryContextWithCustomAliasTest extends TestCase
     /**
      * @return class-string<\Zing\LaravelSentry\Tests\CustomAlias\CustomSentryIntegration>
      */
-    protected function resolveSentryIntegration()
+    protected function resolveSentryIntegration(): string
     {
         return CustomSentryIntegration::class;
     }
