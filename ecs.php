@@ -7,7 +7,7 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Zing\CodingStandard\Set\ECSSetList;
 
 return static function (ECSConfig $ecsConfig): void {
-    $ecsConfig->sets([ECSSetList::PHP_72, ECSSetList::CUSTOM]);
+    $ecsConfig->sets([ECSSetList::PHP_73, ECSSetList::CUSTOM]);
     $ecsConfig->parallel();
     $ecsConfig->skip([
         // bug
