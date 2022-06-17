@@ -3,6 +3,11 @@
     "description": "Provides sentry context middleware.",
     "keywords": ["laravel", "sentry"],
     "license": "MIT",
+    "homepage": "https://github.com/zingimmick/laravel-sentry",
+    "support": {
+        "issues": "https://github.com/zingimmick/laravel-sentry/issues",
+        "source": "https://github.com/zingimmick/laravel-sentry"
+    },
     "authors": [
         {
             "name": "zingimmick",
