@@ -11,7 +11,11 @@
 <a href="https://codeclimate.com/github/zingimmick/laravel-sentry/maintainability"><img src="https://api.codeclimate.com/v1/badges/5a95a074bcd38fd38da0/maintainability" /></a>
 </p>
 
-> **Requires [PHP 7.3.0+](https://php.net/releases/)**
+### Requirements
+
+- [PHP 7.3+](https://php.net/releases/)
+- [Composer](https://getcomposer.org)
+- [Laravel 8.0+](https://laravel.com/docs/releases)
 
 Require Laravel Sentry using [Composer](https://getcomposer.org):
 
