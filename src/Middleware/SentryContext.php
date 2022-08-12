@@ -10,6 +10,7 @@ use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Http\Request;
 use Sentry\State\Scope;
 use Zing\LaravelSentry\Support\SentryIntegration;
+
 use function Sentry\configureScope;
 
 class SentryContext
