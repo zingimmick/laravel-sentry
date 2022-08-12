@@ -9,6 +9,7 @@ use Sentry\Laravel\ServiceProvider;
 use Sentry\State\Hub;
 use Throwable;
 
+
 /**
  * @deprecated Use report($exception) instead
  */
