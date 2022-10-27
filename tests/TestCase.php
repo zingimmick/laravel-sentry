@@ -21,10 +21,7 @@ abstract class TestCase extends BaseTestCase
         return [AuthServiceProvider::class, ServiceProvider::class];
     }
 
-    /**
-     * @param mixed $nextParam
-     */
-    protected function createNext(&$nextParam): \Closure
+    protected function createNext(mixed &$nextParam): \Closure
     {
         return static function ($param) use (&$nextParam): void {
             $nextParam = $param;

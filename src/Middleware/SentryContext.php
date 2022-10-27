@@ -16,28 +16,22 @@ use function Sentry\configureScope;
 class SentryContext
 {
     /**
-     * The authentication factory instance.
-     *
-     * @var \Illuminate\Contracts\Auth\Factory
-     */
-    protected $auth;
-
-    /**
      * Create a new middleware instance.
      */
-    public function __construct(Factory $auth)
-    {
-        $this->auth = $auth;
+    public function __construct(
+        /**
+         * The authentication factory instance.
+         */
+        protected Factory $authFactory
+    ) {
     }
 
     /**
      * Handle an incoming request.
-     *
-     * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): mixed
     {
-        if ($this->auth->guard()->guest()) {
+        if ($this->authFactory->guard()->guest()) {
             return $next($request);
         }
 
@@ -46,11 +40,11 @@ class SentryContext
         }
 
         /** @var \Illuminate\Contracts\Auth\Authenticatable $user */
-        $user = $this->auth->guard()
+        $user = $this->authFactory->guard()
             ->user();
         configureScope(
             function (Scope $scope) use ($user): void {
-                $scope->setUser($this->resolveUserContext($this->auth->getDefaultDriver(), $user));
+                $scope->setUser($this->resolveUserContext($this->authFactory->getDefaultDriver(), $user));
             }
         );
 
