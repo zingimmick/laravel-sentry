@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Zing\LaravelSentry\Middleware;
 
-use Closure;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Http\Request;
@@ -29,7 +28,7 @@ class SentryContext
     /**
      * Handle an incoming request.
      */
-    public function handle(Request $request, Closure $next): mixed
+    public function handle(Request $request, \Closure $next): mixed
     {
         if ($this->authFactory->guard()->guest()) {
             return $next($request);

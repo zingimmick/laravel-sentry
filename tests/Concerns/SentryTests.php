@@ -7,7 +7,6 @@ namespace Zing\LaravelSentry\Tests\Concerns;
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Mockery;
 use Sentry\Event;
 use Sentry\State\HubInterface;
 use Zing\LaravelSentry\Middleware\SentryContext;
@@ -31,7 +30,7 @@ trait SentryTests
             ]
         );
         Auth::setUser($user);
-        $request = Mockery::mock(Request::class);
+        $request = \Mockery::mock(Request::class);
         $nextParam = null;
 
         /** @var \Illuminate\Contracts\Auth\Factory $auth */
@@ -53,7 +52,7 @@ trait SentryTests
     public function testGuest(): void
     {
         $nextParam = null;
-        $request = Mockery::mock(Request::class);
+        $request = \Mockery::mock(Request::class);
 
         /** @var \Illuminate\Contracts\Auth\Factory $auth */
         $auth = Auth::getFacadeRoot();

@@ -6,7 +6,6 @@ namespace Zing\LaravelSentry\Tests;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Mockery;
 use Sentry\Event;
 use Zing\LaravelSentry\Tests\Concerns\SentryTests;
 use Zing\LaravelSentry\Tests\CustomContext\CustomSentryContext;
@@ -29,7 +28,7 @@ final class SentryContextTest extends TestCase
         );
         Auth::shouldUse('api');
         Auth::setUser($user);
-        $request = Mockery::mock(Request::class);
+        $request = \Mockery::mock(Request::class);
 
         /** @var \Illuminate\Contracts\Auth\Factory $auth */
         $auth = Auth::getFacadeRoot();

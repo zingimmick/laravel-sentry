@@ -7,7 +7,6 @@ namespace Zing\LaravelSentry\Tests;
 use Illuminate\Auth\AuthServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Mockery;
 use Sentry\Event;
 use Sentry\SentrySdk;
 use Zing\LaravelSentry\Middleware\SentryContext;
@@ -36,7 +35,7 @@ final class SentryNotBoundTest extends TestCase
             ]
         );
         Auth::setUser($user);
-        $request = Mockery::mock(Request::class);
+        $request = \Mockery::mock(Request::class);
 
         /** @var \Illuminate\Contracts\Auth\Factory $auth */
         $auth = Auth::getFacadeRoot();
