@@ -78,7 +78,7 @@ trait SentryTests
     /**
      * @return class-string<\Zing\LaravelSentry\Support\SentryIntegration>
      */
-    protected function resolveSentryIntegration()
+    protected function resolveSentryIntegration(): string
     {
         return SentryIntegration::class;
     }
