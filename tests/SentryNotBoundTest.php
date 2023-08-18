@@ -46,7 +46,7 @@ final class SentryNotBoundTest extends TestCase
 
         /** @var \Sentry\UserDataBag $userContext */
         $userContext = $event->getUser();
-        self::assertNull($userContext);
-        self::assertSame($request, $nextParam);
+        $this->assertNull($userContext);
+        $this->assertSame($request, $nextParam);
     }
 }
