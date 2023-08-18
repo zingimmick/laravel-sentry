@@ -18,6 +18,6 @@ final class SentryIntegrationTest extends TestCase
         $container->shouldReceive('bound')
             ->withArgs(['sentry'])->andReturn(false);
         Container::setInstance($container);
-        self::assertFalse(SentryIntegration::bound());
+        $this->assertFalse(SentryIntegration::bound());
     }
 }
