@@ -64,7 +64,7 @@ trait SentryTests
             ->pushScope()
             ->applyToEvent(Event::createEvent());
 
-        /** @var \Sentry\UserDataBag $userContext */
+        /** @var \Sentry\UserDataBag|null $userContext */
         $userContext = $event->getUser();
         $this->assertNull($userContext);
         $this->assertSame($request, $nextParam);
