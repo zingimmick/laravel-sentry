@@ -44,7 +44,7 @@ final class SentryNotBoundTest extends TestCase
         /** @var \Sentry\Event $event */
         $event = SentrySdk::getCurrentHub()->pushScope()->applyToEvent(Event::createEvent());
 
-        /** @var \Sentry\UserDataBag $userContext */
+        /** @var \Sentry\UserDataBag|null $userContext */
         $userContext = $event->getUser();
         $this->assertNull($userContext);
         $this->assertSame($request, $nextParam);
