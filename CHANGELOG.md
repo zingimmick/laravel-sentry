@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.4.0 - 2025-02-24
+
+<!-- Release notes generated using configuration in .github/release.yml at 3.x -->
+### What's Changed
+
+#### Other Changes
+
+* Remove rules that were never registered by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/149
+* Support for PHP 8.4 by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/151
+* Allow orchestra/testbench 9.0 and nesbot/carbon 3.4 in tests action by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/153
+* Update license copyright year(s) by @github-actions in https://github.com/zingimmick/laravel-sentry/pull/155
+* Update nunomaduro/larastan requirement from ^1.0 || ^2.0 to ^1.0 || ^2.0 || ^3.0 by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/156
+* Use larastan/larastan instead of nunomaduro/larastan by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/157
+* Support for Laravel 12 by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/158
+
+**Full Changelog**: https://github.com/zingimmick/laravel-sentry/compare/3.3.0...3.4.0
+
 ## 3.3.0 - 2024-03-18
 
 <!-- Release notes generated using configuration in .github/release.yml at 3.x -->
