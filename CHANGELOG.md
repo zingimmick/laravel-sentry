@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.5.0 - 2026-03-18
+
+<!-- Release notes generated using configuration in .github/release.yml at 3.x -->
+### What's Changed
+
+#### Other Changes
+
+* Support for PHPUnit 12 by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/159
+* Bump shivammathur/setup-php from 2.32.0 to 2.33.0 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/160
+* Bump shivammathur/setup-php from 2.33.0 to 2.34.0 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/161
+* Bump shivammathur/setup-php from 2.34.0 to 2.34.1 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/162
+* Bump shivammathur/setup-php from 2.34.1 to 2.35.1 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/163
+* Bump shivammathur/setup-php from 2.35.1 to 2.35.2 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/164
+* Bump shivammathur/setup-php from 2.35.2 to 2.35.3 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/165
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/166
+* Bump shivammathur/setup-php from 2.35.3 to 2.35.4 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/167
+* Bump shivammathur/setup-php from 2.35.4 to 2.35.5 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/168
+* Bump github/codeql-action from 3 to 4 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/169
+* Support for PHP 8.5 by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/170
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/171
+* Bump shivammathur/setup-php from 2.35.5 to 2.36.0 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/172
+* Update license copyright year(s) by @github-actions[bot] in https://github.com/zingimmick/laravel-sentry/pull/173
+* Update orchestra/testbench version constraint by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/174
+* Bump shivammathur/setup-php from 2.36.0 to 2.37.0 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/175
+* Support for Laravel 13 by @zingimmick in https://github.com/zingimmick/laravel-sentry/pull/177
+* Bump ramsey/composer-install from 3 to 4 by @dependabot[bot] in https://github.com/zingimmick/laravel-sentry/pull/176
+
+**Full Changelog**: https://github.com/zingimmick/laravel-sentry/compare/3.4.0...3.5.0
+
 ## 3.4.0 - 2025-02-24
 
 <!-- Release notes generated using configuration in .github/release.yml at 3.x -->
