@@ -66,7 +66,7 @@ trait SentryTests
 
         /** @var \Sentry\UserDataBag|null $userContext */
         $userContext = $event->getUser();
-        $this->assertNull($userContext);
+        $this->assertNotInstanceOf(\Sentry\UserDataBag::class, $userContext);
         $this->assertSame($request, $nextParam);
     }
 

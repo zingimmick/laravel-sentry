@@ -15,7 +15,7 @@ use Zing\LaravelSentry\Tests\CustomContext\CustomSentryContext;
  */
 final class SentryContextTest extends TestCase
 {
-     use SentryTests;
+    use SentryTests;
 
     public function testCustom(): void
     {
